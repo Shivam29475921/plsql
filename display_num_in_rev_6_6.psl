@@ -1,0 +1,14 @@
+DECLARE
+    num NUMBER := 12345;
+    reversed_num NUMBER := 0;
+    remainder NUMBER;
+BEGIN
+    WHILE num > 0 LOOP
+        remainder := TRUNC(num MOD 10);
+        reversed_num := reversed_num * 10 + remainder;
+        num := TRUNC(num / 10);
+    END LOOP;
+    
+    DBMS_OUTPUT.PUT_LINE('Reversed number: ' || reversed_num);
+END;
+/

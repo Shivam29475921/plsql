@@ -1,0 +1,8 @@
+DECLARE
+    a number:= &a;
+    b number:= &b;
+BEGIN
+    if a > b then dbms_output.put_line('Larger number: ' || a);
+    else dbms_output.put_line('Larger number' || b);
+    end if;
+END;

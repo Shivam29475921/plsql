@@ -1,0 +1,11 @@
+DECLARE
+    a number:=10;
+    b number:=20;
+    c number;
+BEGIN
+    dbms_output.put_line('BEFORE SWAP: a=' || a || ' b=' || b);
+    c:=a;
+    a:=b;
+    b:=c;
+    dbms_output.put_line('AFTER SWAP: a=' || a || ' b=' || b);
+END;

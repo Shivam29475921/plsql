@@ -1,0 +1,22 @@
+DECLARE
+    num NUMBER := 17; -- Change this to the number you want to check
+    isPrime BOOLEAN := TRUE;
+BEGIN
+    IF num <= 1 THEN
+        isPrime := FALSE;
+    ELSE
+        FOR i IN 2..num/2 LOOP
+            IF TRUNC(num MOD i) = 0 THEN
+                isPrime := FALSE;
+                EXIT;
+            END IF;
+        END LOOP;
+    END IF;
+
+    IF isPrime THEN
+        DBMS_OUTPUT.PUT_LINE(num || ' is a prime number');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE(num || ' is not a prime number');
+    END IF;
+END;
+/

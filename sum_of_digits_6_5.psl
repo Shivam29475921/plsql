@@ -1,0 +1,15 @@
+DECLARE
+    num NUMBER := 12345; -- Replace with your desired number
+    sum NUMBER := 0;
+    digit NUMBER;
+BEGIN
+    WHILE num > 0 LOOP
+        digit := TRUNC(num MOD 10);
+        dbms_output.put_line(digit);
+        sum := sum + digit;
+        num := TRUNC(num / 10);
+    END LOOP;
+    
+    DBMS_OUTPUT.PUT_LINE('Sum of digits: ' || sum);
+END;
+/

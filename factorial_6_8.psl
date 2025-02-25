@@ -1,0 +1,9 @@
+DECLARE
+    num NUMBER := 5;
+    factorial NUMBER := 1;
+BEGIN
+    FOR i IN 1..num LOOP
+        factorial:=factorial*i;
+    END LOOP;
+    DBMS_OUTPUT.PUT_LINE(factorial);
+END;
