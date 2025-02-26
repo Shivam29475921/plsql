@@ -1,0 +1,20 @@
+-- Create the areas table if it doesn't exist
+CREATE TABLE IF NOT EXISTS areas (
+    radius NUMBER,
+    area NUMBER
+);
+
+-- Loop through the radii and calculate the area for each
+BEGIN
+    FOR i IN 3..7 LOOP
+        -- Calculate the area using the formula: area = π * radius^2
+        DECLARE
+            radius NUMBER := i;
+            area NUMBER := 3.14159 * radius * radius;
+        BEGIN
+            -- Insert the radius and area into the areas table
+            INSERT INTO areas (radius, area) VALUES (radius, area);
+        END;
+    END LOOP;
+END;
+/
